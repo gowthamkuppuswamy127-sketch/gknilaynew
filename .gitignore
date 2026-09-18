@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node — only ever used to fetch the vendored GSAP files
+node_modules/
+package-lock.json
+
+# Build output
+_site/
+
+# Local scratch
+*.log
+
+# Python
+__pycache__/
+*.pyc

@@ -1,8 +1,23 @@
 # gknilaynew
 
+Two unrelated things live in this repository.
+
+## 1. Nilayaa Interiors website
+
+A four-page static marketing site at the repository root — `index.html`,
+`portfolio.html`, `services.html`, `contact.html`. No build step, no backend.
+
+* **[SITE.md](SITE.md)** — how it is built, how to edit it, how to deploy it
+* **[CONTENT-TODO.md](CONTENT-TODO.md)** — what to replace before going live
+* **[assets/images/README.md](assets/images/README.md)** — photo slots and sizes
+
+Run it: `python3 -m http.server 8000`
+
+## 2. Vendored Claude Code skills
+
 Vendored copies of Claude Code skills.
 
-## Layout
+### Layout
 
 ```
 .claude/skills/frontend-design/     # active skill — auto-discovered by Claude Code in this repo
@@ -46,7 +61,7 @@ meaningful to the plugin marketplace). The `.claude/skills/` copy is what Claude
 Code loads when working in this repository. Both are byte-identical to
 upstream — update them together.
 
-## What the skills do
+### What the skills do
 
 **frontend-design** — Guides Claude toward distinctive, intentional visual
 design when building or reshaping a UI: aesthetic direction, typography, and
@@ -97,7 +112,7 @@ research notes (`research/`), example renders (`examples/`), and README-build
 scripts (`scripts/`) unrelated to skill behavior — only the skill payload
 (`skills/` + the plugin manifest, `README.md`, `LICENSE`) is vendored here.
 
-## Provenance
+### Provenance
 
 | | |
 |---|---|
@@ -120,7 +135,7 @@ scripts (`scripts/`) unrelated to skill behavior — only the skill payload
 | Plugin version | 1.0.0 |
 | `taste-skill/SKILL.md` sha256 | `aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89` |
 
-## License
+### License
 
 `frontend-design`: © Anthropic PBC. All rights reserved. Use is subject to
 Anthropic's [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms).
