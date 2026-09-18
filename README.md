@@ -12,6 +12,12 @@ Vendored copies of Claude Code skills.
 .claude/skills/{banner-design,brand,design,design-system,slides,ui-styling,ui-ux-pro-max}/
                                      # active skills from the ui-ux-pro-max-skill plugin
 
+.claude/skills/{taste-skill,taste-skill-v1,gpt-tasteskill,image-to-code-skill,
+                imagegen-frontend-web,imagegen-frontend-mobile,brandkit,
+                redesign-skill,soft-skill,output-skill,minimalist-skill,
+                brutalist-skill,stitch-skill}/
+                                     # active skills from the taste-skill plugin
+
 plugins/frontend-design/            # verbatim mirror of the upstream plugin
 ├── .claude-plugin/plugin.json
 ├── skills/frontend-design/SKILL.md
@@ -21,6 +27,15 @@ plugins/frontend-design/            # verbatim mirror of the upstream plugin
 plugins/ui-ux-pro-max/              # verbatim mirror of the upstream plugin
 ├── .claude-plugin/plugin.json
 ├── skills/{banner-design,brand,design,design-system,slides,ui-styling,ui-ux-pro-max}/
+├── README.md
+└── LICENSE
+
+plugins/taste-skill/                # verbatim mirror of the upstream plugin
+├── .claude-plugin/plugin.json
+├── skills/{taste-skill,taste-skill-v1,gpt-tasteskill,image-to-code-skill,
+│           imagegen-frontend-web,imagegen-frontend-mobile,brandkit,
+│           redesign-skill,soft-skill,output-skill,minimalist-skill,
+│           brutalist-skill,stitch-skill}/, skills/llms.txt
 ├── README.md
 └── LICENSE
 ```
@@ -54,6 +69,34 @@ docs/example scaffolding used to build and publish the skill across multiple
 AI platforms — only the skill payload (`.claude/skills/` + the plugin
 manifest) is vendored here, per its own `CLAUDE.md`.
 
+**taste-skill plugin** (13 skills) — "Anti-slop" frontend design taste
+skills: stronger layout, typography, motion, and spacing instead of
+boilerplate-looking AI UIs, plus image-generation skills for design
+reference boards. Install names and jobs:
+
+| Skill (folder) | Install name | Job |
+| --- | --- | --- |
+| `taste-skill` | `design-taste-frontend` | Default anti-slop skill (v2, experimental): brief inference, three tunable dials (variance/motion/density), design-system mapping, GSAP code skeletons, pre-flight checklist. |
+| `taste-skill-v1` | `design-taste-frontend-v1` | Original v1, preserved for projects pinned to its exact behavior. |
+| `gpt-tasteskill` | `gpt-taste` | Stricter variant tuned for GPT/Codex: higher layout variance, stronger GSAP direction. |
+| `image-to-code-skill` | `image-to-code` | Generate design reference images first, analyze them, then implement the frontend to match. |
+| `redesign-skill` | `redesign-existing-projects` | Audits an existing UI before fixing layout, spacing, and hierarchy. |
+| `soft-skill` | `high-end-visual-design` | Polished, calm, premium UI with soft contrast and spring motion. |
+| `output-skill` | `full-output-enforcement` | Stops the model shipping half-finished work or placeholder comments. |
+| `minimalist-skill` | `minimalist-ui` | Editorial product UI (Notion/Linear style), restrained palette. |
+| `brutalist-skill` | `industrial-brutalist-ui` | Hard mechanical language: Swiss type, sharp contrast. |
+| `stitch-skill` | `stitch-design-taste` | Google Stitch-compatible design rules, with a `DESIGN.md` export format. |
+| `imagegen-frontend-web` | `imagegen-frontend-web` | Image-generation only: website comps (hero, landing, multi-section). |
+| `imagegen-frontend-mobile` | `imagegen-frontend-mobile` | Image-generation only: mobile screens and flows. |
+| `brandkit` | `brandkit` | Image-generation only: brand-kit boards (logo directions, palettes, type). |
+
+Claude picks the relevant one up automatically for frontend/design work; see
+`plugins/taste-skill/README.md` for the full upstream usage guide. Note: the
+upstream repository also ships marketing assets (`assets/`), background
+research notes (`research/`), example renders (`examples/`), and README-build
+scripts (`scripts/`) unrelated to skill behavior — only the skill payload
+(`skills/` + the plugin manifest, `README.md`, `LICENSE`) is vendored here.
+
 ## Provenance
 
 | | |
@@ -70,6 +113,13 @@ manifest) is vendored here, per its own `CLAUDE.md`.
 | Plugin version | 2.13.0 |
 | `ui-ux-pro-max/SKILL.md` sha256 | `ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9` |
 
+| | |
+|---|---|
+| Source | `Leonxlnx/taste-skill` @ `e79ca9ec7e071eb3a3b623c4fb752e853fc3ed58` |
+| Path | `skills/`, `.claude-plugin/plugin.json` |
+| Plugin version | 1.0.0 |
+| `taste-skill/SKILL.md` sha256 | `aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89` |
+
 ## License
 
 `frontend-design`: © Anthropic PBC. All rights reserved. Use is subject to
@@ -77,3 +127,6 @@ Anthropic's [Commercial Terms of Service](https://www.anthropic.com/legal/commer
 
 `ui-ux-pro-max` and its bundled skills: MIT License, © 2024 Next Level
 Builder. See `plugins/ui-ux-pro-max/LICENSE`.
+
+`taste-skill` and its bundled skills: MIT License, © 2026 Leonxlnx. See
+`plugins/taste-skill/LICENSE`.
